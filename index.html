@@ -1,0 +1,184 @@
+<style>
+	@font-face{
+		font-family: 'jap';
+		src:url("fonts/UDDigiKyokashoN-R.ttc");
+	}
+
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-family: jap;
+	}
+
+	body{
+		font-size: 20;
+		text-align: center;
+	}
+
+	#lista li{padding: 5}	
+
+	#lista li{
+		display: inline-block;
+		padding: 5
+	}
+
+	.ok{background-color: #27ae60;color:white;}
+	.nok{background-color:#e74c3c;color:white;}
+	.cinza{background-color: #ddd}
+
+	input{margin: 5;}
+	input{padding: 10}
+
+
+</style>
+
+<meta charset="utf-8">
+
+
+<h1>Treine japonês</h1>
+<input type="" name="" id="qt" value="200" placeholder="Quantidade"><br>
+<label><input type="checkbox" id=kana checked>Katakana</label>
+<label><input type="checkbox" id=hira checked>Hiragana</label>
+<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
+<br><br>
+<ul id="lista"></ul>
+<br><br>
+<input id="inp" autofocus="">
+<h1 id="quadro"></h1>
+<script src="japones.js"></script>
+
+
+<script>
+
+	//kcireh.i@gmail.com
+
+	list = []
+	
+	function render1(){
+
+		lista.innerHTML = ""
+
+		quantidade = parseInt(qt.value)
+		sequencia = []
+		num = 0
+		// list = []
+
+		for(i=0;i<quantidade;i++){
+
+			r = parseInt(Math.random()*kan.length)
+
+			sequencia.push(t[r]
+				.replace(/shi/g,"si")
+				.replace(/chi/g,"ti")
+				.replace(/dzu/g,"du")
+				.replace(/ji/g,"di")
+				.replace(/tsu/g,"tu")
+				.replace(/dzu/g,"zu")
+				)
+
+			lista.innerHTML += "<li>"+sequencia[i]+"</li>"
+			list[i] = lista.children[i]
+		}	
+
+		lista.children[0].classList.add('cinza')
+
+		bloco = {
+			a1:sequencia[0],
+			check:function(){
+				if(this.a1 == this.a2)
+					return true
+				else
+					return false
+			}
+		}
+	}
+
+	inp.onkeydown=function(e){
+
+		if(e.key == " " || e.key == "Enter" ){
+
+			val = this.value.replace(/ /g,"")
+
+			val = val.replace(/shi/g,"si")
+			.replace(/chi/g,"ti")
+			.replace(/dzu/g,"du")
+			.replace(/ji/g,"di")
+			.replace(/ji/g,"di")
+			.replace(/tsu/g,"tu")
+			.replace(/dzu/g,"zu")
+
+			bloco.a1 = sequencia[num]
+			bloco.a2 = val
+			
+			this.value = ""
+
+			confirm(bloco.a1,bloco.a2)
+			next(num)
+
+			num++
+		}
+
+	}
+
+	function next(num){
+		lista.children[num].classList.remove('cinza')
+		lista.children[num+1].classList.add('cinza')
+	}
+
+	function confirm(a,b){
+		if(a==b)
+			lista.children[num].classList.add('ok')
+		else
+			lista.children[num].classList.add('nok')
+	}
+
+	function render2(){
+		a = 0
+
+		if(hira.checked && !kana.checked){
+			for(i=0;i<list.length;i++){
+				lista.children[a].innerHTML = toHir(list[i].innerHTML)
+				a++
+			}
+		}
+		
+		if(kana.checked && !hira.checked){
+			for(i=0;i<list.length;i++){
+				lista.children[a].innerHTML = toKan(list[i].innerHTML)
+				a++
+			}
+		}
+
+		if(hira.checked && kana.checked){
+			for(i=0;i<list.length;i++){
+				if(a%2==0)
+					lista.children[a].innerHTML = toKan(list[i].innerHTML)
+				else
+					lista.children[a].innerHTML = toHir(list[i].innerHTML)
+				a++
+			}
+		}
+
+
+	}render2()
+
+	kana.onclick=function(){
+		render1();
+		render2();
+	}
+
+	hira.onclick=function(){
+		render1();
+		render2();
+	}
+
+	qt.onkeyup=function(){
+		render1();
+		render2();
+	}
+
+	render1();
+	render2();
+
+</script>

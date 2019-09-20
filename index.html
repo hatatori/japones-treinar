@@ -59,21 +59,39 @@
 	input{margin: 5;}
 	input{padding: 10}
 
+	.lb::before{
+		content: attr(nome);
+		background-color: white;
+		position: absolute;
+		top: -15;
+		left: 10;
+		font-size: 12;
+		padding: 2;
+	}
+
+	.lb{;position: relative;}
 
 </style>
 
 <meta charset="utf-8">
 
+<br>
 
-<h1>Treine japonês</h1>
-<input type="" name="" id="qt" value="200" placeholder="Quantidade"><br>
+<label class="lb" nome="Quantidade"><input type="" nome="Quantidade" id="qt" value="100" placeholder="Quantidade"></label>
+
+<br>
+
+
 <label><input type="checkbox" id=kana checked>Katakana</label>
 <label><input type="checkbox" id=hira checked>Hiragana</label>
 <label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
 <br><br>
+<hr><br>
 <ul id="lista"></ul>
+<br><hr>
 <br><br>
-<input id="inp" autofocus="">
+
+<label class="lb" nome="Nome do símbolo"><input id="inp" autofocus=""></label>
 <h1 id="quadro"></h1>
 <script src="japones.js"></script>
 

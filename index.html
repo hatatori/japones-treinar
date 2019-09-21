@@ -9,7 +9,7 @@
 		padding: 0;
 		list-style: none;
 		font-family: jap;
-		transition: 0.2s;
+		transition: 0.5s;
 	}
 
 	body{
@@ -17,7 +17,7 @@
 		text-align: center;
 	}
 
-	#lista li{padding: 5}	
+	#lista li{padding: 5;margin: 2;box-shadow: 0px 0px 2px  rgba(0,0,0,0.2);font-size: 22px}	
 
 	#lista li{
 		display: inline-block;
@@ -52,12 +52,12 @@
 		/*font-size: 10*/
 	}
 
-	.ok{background-color: #27ae60;color:white;}
-	.nok{background-color:#e74c3c;color:white;}
+	.ok{background-color: #4caf50;color:white;background: linear-gradient(#4caf50 85%, #40a050 0px)}
+	.nok{background-color:#df5553;color:white; background: linear-gradient(#df5553 85%, #d05050 0px)}
 	.cinza{background-color: #ddd}
 
 	input{margin: 5;}
-	input{padding: 10}
+	input{padding: 10;}
 
 	.lb::before{
 		content: attr(nome);
@@ -71,28 +71,30 @@
 
 	.lb{;position: relative;}
 
+
 </style>
 
 <meta charset="utf-8">
 
 <br>
 
-<label class="lb" nome="Quantidade"><input type="" nome="Quantidade" id="qt" value="100" placeholder="Quantidade"></label>
-
-<br>
 
 
-<label><input type="checkbox" id=kana checked>Katakana</label>
-<label><input type="checkbox" id=hira checked>Hiragana</label>
-<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
-<br><br>
-<hr><br>
 <ul id="lista"></ul>
-<br><hr>
 <br><br>
 
 <label class="lb" nome="Nome do símbolo"><input id="inp" autofocus=""></label>
 <h1 id="quadro"></h1>
+<br>
+<hr>
+<br>	
+<div id="bloco1">
+	<label class="lb" nome="Quantidade"><input type="" nome="Quantidade" id="qt" value="100" placeholder="Quantidade"></label>
+
+	<label><input type="checkbox" id=kana checked>Katakana</label>
+	<label><input type="checkbox" id=hira checked>Hiragana</label>
+	<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
+</div>
 <script src="japones.js"></script>
 
 

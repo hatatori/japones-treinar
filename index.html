@@ -16,8 +16,9 @@
 		font-size: 20;
 		text-align: center;
 	}
+	#lista{padding: 10}
 
-	#lista li{padding: 5;margin: 2;box-shadow: 0px 0px 2px  rgba(0,0,0,0.2);font-size: 22px}	
+	#lista li{padding: 5;margin: 2;box-shadow: 0px 0px 2px  rgba(0,0,0,0.25);font-size: 22px}	
 
 	#lista li{
 		display: inline-block;
@@ -33,6 +34,8 @@
 	}
 
 	li::before{
+		font-family: monospace;
+		font-size: 16;
 		overflow: hidden;
 		content: attr(data-tit);
 		color: black;
@@ -82,6 +85,14 @@
 
 	a{color: #d35400;text-decoration: none}
 
+	span{
+		font-family: monospace;
+		padding: 10;
+		font-family: monospace;
+		font-size: 12;
+		display: block;
+		
+	}
 
 </style>
 
@@ -95,7 +106,7 @@
 <br>
 <hr>
 <br>
-<label class="lb" nome="Nome do símbolo"><input id="inp" autofocus=""></label>
+<label class="lb" nome="Nome do símbolo" id="pont"><input id="inp" autofocus=""></label>
 <h1 id="quadro"></h1>
 <br>
 <br>	
@@ -123,7 +134,8 @@
 		quantidade = parseInt(qt.value)
 		sequencia = []
 		num = 0
-		// list = []
+
+		pontuacao = {a:0,b:0}
 
 		for(i=0;i<quantidade;i++){
 
@@ -139,9 +151,15 @@
 				.replace(/fu/g,"hu")
 				)		
 
-			
+			k = sequencia[i].replace(/si/g,"shi")
+			.replace(/ti/g,"chi")
+			.replace(/du/g,"dzu")
+			.replace(/tu/g,"tsu")
+			.replace(/du/g,"dzu")
+			.replace(/zi/g,"ji")
+			.replace(/hu/g,"fu")
 
-			lista.innerHTML += "<li data-tit="+sequencia[i]+">"+sequencia[i]+"</li>"
+			lista.innerHTML += "<li data-tit="+k+">"+sequencia[i]+"</li>"
 			list[i] = lista.children[i]
 		}	
 
@@ -186,6 +204,8 @@
 			this.value = this.value.replace(/ /g,"")
 
 			num++
+
+			
 		}
 
 	}
@@ -196,10 +216,16 @@
 	}
 
 	function confirm(a,b){
-		if(a==b)
+		if(a==b){
 			lista.children[num].classList.add('ok')
-		else
+			pontuacao.a++
+			pont.setAttribute("nome","Nome do símbolo "+pontuacao.a+"/"+pontuacao.b+"/"+(pontuacao.a+pontuacao.b))
+		}
+		else{
 			lista.children[num].classList.add('nok')
+			pontuacao.b++
+			pont.setAttribute("nome","Nome do símbolo "+pontuacao.a+"/"+pontuacao.b+"/"+(pontuacao.a+pontuacao.b))
+		}
 	}
 
 	function render2(){

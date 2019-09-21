@@ -16,15 +16,17 @@
 		font-size: 20;
 		text-align: center;
 	}
-	#lista{padding: 10}
 
-	#lista li{padding: 5;margin: 2;box-shadow: 0px 0px 2px  rgba(0,0,0,0.25);font-size: 22px}	
+	#lista{padding: 10}
 
 	#lista li{
 		display: inline-block;
 		padding: 5;
+		margin: 2;
 		position: relative;
 	}
+
+	.borda{border: solid 2px transparent;}
 
 	li:hover{cursor: pointer;}
 
@@ -56,12 +58,28 @@
 		color:black;
 	}
 
-	.ok{background-color: #4caf50;color:white;background: linear-gradient(#4caf50 85%, #40a050 0px);border: solid 2px #3b6e22;}
-	.nok{background-color:#df5553;color:white; background: linear-gradient(#df5553 85%, #d05050 0px); border: solid 2px #9b4343;}
+	.ok{
+		background-color: #4caf50;
+		color:white;
+		background: linear-gradient(#4caf50 85%, #40a050 0px);
+		border: solid 2px #3b6e22;
+		margin:0;
+	}
+
+
+
+	.nok{
+		background-color:#df5553;
+		color:white; background: linear-gradient(#df5553 85%, #d05050 0px); 
+		border: solid 2px #9b4343;
+		margin:0;
+	}
+
+
 	.cinza{background-color: #ddd}
 
-	input{margin: 5;}
-	input{padding: 10;}
+	input{margin: 5;padding: 10;outline: none}
+	
 
 	.lb::before{
 		content: attr(nome);
@@ -75,8 +93,6 @@
 
 	.lb{;position: relative;}
 
-
-
 	
 
 	a{color: #d35400;text-decoration: none}
@@ -87,7 +103,6 @@
 		font-family: monospace;
 		font-size: 12;
 		display: block;
-		
 	}
 
 
@@ -106,8 +121,9 @@
 		margin: auto;
 		height: 20;
 		text-align: center;
-		background-color: red;
 	}
+
+	.showhide:hover::before{background-color: #eee;}
 
 	.showhide::before{
 		content: 'Menu';
@@ -115,6 +131,7 @@
 		left: 0;
 		right: 0;
 		margin:auto;
+		padding: 10
 	}
 
 </style>
@@ -127,12 +144,8 @@
 
 <ul id="lista"></ul>
 <br>
-<hr>
-<br>
 <label class="lb" nome="Nome do símbolo" id="pont"><input id="inp" autofocus=""></label>
 <h1 id="quadro"></h1>
-<br>
-<br>	
 
 <input class="showhide" type="checkbox" name="">
 <div id="bloco1">
@@ -183,7 +196,7 @@
 			.replace(/zi/g,"ji")
 			.replace(/hu/g,"fu")
 
-			lista.innerHTML += "<li data-tit="+k+">"+sequencia[i]+"</li>"
+			lista.innerHTML += "<li class='borda' data-tit="+k+">"+sequencia[i]+"</li>"
 			list[i] = lista.children[i]
 		}	
 

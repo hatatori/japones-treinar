@@ -56,8 +56,8 @@
 		color:black;
 	}
 
-	.ok{background-color: #4caf50;color:white;background: linear-gradient(#4caf50 85%, #40a050 0px)}
-	.nok{background-color:#df5553;color:white; background: linear-gradient(#df5553 85%, #d05050 0px)}
+	.ok{background-color: #4caf50;color:white;background: linear-gradient(#4caf50 85%, #40a050 0px);border: solid 2px #3b6e22;}
+	.nok{background-color:#df5553;color:white; background: linear-gradient(#df5553 85%, #d05050 0px); border: solid 2px #9b4343;}
 	.cinza{background-color: #ddd}
 
 	input{margin: 5;}
@@ -75,11 +75,7 @@
 
 	.lb{;position: relative;}
 
-	#bloco1{
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-	}
+
 
 	
 
@@ -92,6 +88,33 @@
 		font-size: 12;
 		display: block;
 		
+	}
+
+
+	.showhide:checked + *{
+		max-height: 100;
+	}
+
+	.showhide + *{
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	.showhide{
+		width: 0;
+		background-color: blue;
+		margin: auto;
+		height: 20;
+		text-align: center;
+		background-color: red;
+	}
+
+	.showhide::before{
+		content: 'Menu';
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin:auto;
 	}
 
 </style>
@@ -110,9 +133,10 @@
 <h1 id="quadro"></h1>
 <br>
 <br>	
+
+<input class="showhide" type="checkbox" name="">
 <div id="bloco1">
 	<label class="lb" nome="Quantidade"><input type="" nome="Quantidade" id="qt" value="100" placeholder="Quantidade"></label>
-
 	<label><input type="checkbox" id=kana checked>カタカナ</label>
 	<label><input type="checkbox" id=hira checked>ひらがな</label>
 	<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>

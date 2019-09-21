@@ -9,6 +9,7 @@
 		padding: 0;
 		list-style: none;
 		font-family: jap;
+		transition: 0.2s;
 	}
 
 	body{
@@ -49,6 +50,7 @@
 		margin: auto;
 		opacity: 0;
 		/*font-size: 10*/
+		color:black;
 	}
 
 	.ok{background-color: #4caf50;color:white;background: linear-gradient(#4caf50 85%, #40a050 0px)}
@@ -70,6 +72,16 @@
 
 	.lb{;position: relative;}
 
+	#bloco1{
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	
+
+	a{color: #d35400;text-decoration: none}
+
 
 </style>
 
@@ -80,18 +92,18 @@
 
 
 <ul id="lista"></ul>
-<br><br>
-
+<br>
+<hr>
+<br>
 <label class="lb" nome="Nome do símbolo"><input id="inp" autofocus=""></label>
 <h1 id="quadro"></h1>
 <br>
-<hr>
 <br>	
 <div id="bloco1">
 	<label class="lb" nome="Quantidade"><input type="" nome="Quantidade" id="qt" value="100" placeholder="Quantidade"></label>
 
-	<label><input type="checkbox" id=kana checked>Katakana</label>
-	<label><input type="checkbox" id=hira checked>Hiragana</label>
+	<label><input type="checkbox" id=kana checked>カタカナ</label>
+	<label><input type="checkbox" id=hira checked>ひらがな</label>
 	<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
 </div>
 <script src="japones.js"></script>

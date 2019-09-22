@@ -135,6 +135,16 @@
 		padding: 10
 	}
 
+	#baixo{
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		background-color: white;
+		width: 100%;
+	}
+
 </style>
 
 <meta charset="utf-8">
@@ -143,9 +153,12 @@
 
 
 
-<ul id="lista"></ul>
-<br>
-<label class="lb" nome="Nome do símbolo" id="pont"><input id="inp" autofocus=""></label>
+
+
+<div id="baixo">
+	<label class="lb" nome="Nome do símbolo" id="pont"><input id="inp" autofocus=""></label>
+</div>
+
 <h1 id="quadro"></h1>
 
 <input class="showhide" type="checkbox" name="">
@@ -155,6 +168,10 @@
 	<label><input type="checkbox" id=hira checked>ひらがな</label>
 	<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
 </div>
+
+<ul id="lista"></ul>
+<br>
+
 <script src="japones.js"></script>
 
 

@@ -1,8 +1,8 @@
 // t = "ka,ki,ku,ke,ko,sa,si,shi,su,se,so,za,zi,zu,dzu,ze,zo,ta,ti,tu,tsu,te,to,da,di,ji,dzu,de,do,na,ni,nu,ne,no,ha,hi,hu,he,ho,ba,bi,bu,be,bo,pa,pi,pu,pe,po,ma,mi,mu,me,mo,ya,yu,yo,wa,wo,n".split(",")
 
-t = "a i u e o ka ki ku ke ko sa si shi su se so za zi zu dzu ze zo ta ti chi tu tsu te to da di ji du dzu de do na ni nu ne no ha hi hu he ho ba bi bu be bo pa pi pu pe po ma mi mu me mo ya yu yo wa wo n".split(" ")
-hir = "あいうえおかきくけこさししすせそざじずずぜぞたちちつつてとだぢぢづづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよわをん".split("")
-kan = "アイウエオカキクケコサシシスセソザジズズゼゾタチチツツテトダヂヂヅヅデドナニヌネノハヒフヘホバビブベボパピプペポマミムメモヤユヨワヲン".split("")
+t = "a i u e o ka ki ku ke ko sa si shi su se so za zi zu dzu ze zo ta ti chi tu tsu te to da di ji du dzu de do na ni nu ne no ha hi hu he ho ba bi bu be bo pa pi pu pe po ma mi mu me mo ya yu yo ra ri ru re ro wa wo n".split(" ")
+hir = "あいうえおかきくけこさししすせそざじずずぜぞたちちつつてとだぢぢづづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわをん".split("")
+kan = "アイウエオカキクケコサシシスセソザジズズゼゾタチチツツテトダヂヂヅヅデドナニヌネノハヒフヘホバビブベボパピプペポマミムメモヤユヨラリルレロワヲン".split("")
 
 s = ""
 

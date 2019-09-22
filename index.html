@@ -143,6 +143,8 @@
 		margin: auto;
 		background-color: white;
 		width: 100%;
+		background-color: white;
+		z-index: 2;
 	}
 
 </style>
@@ -235,32 +237,34 @@
 
 		if(e.key == " " || e.key == "Enter" ){
 
-			val = this.value.replace(/ /g,"")
+			if(ordem.length < quantidade){
 
-			val = val.replace(/shi/g,"si")
-			.replace(/chi/g,"ti")
-			.replace(/dzu/g,"du")
-			.replace(/tsu/g,"tu")
-			.replace(/dzu/g,"zu")
-			.replace(/ji/g,"zi")
-			.replace(/fu/g,"hu")
+				val = this.value.replace(/ /g,"")
 
-			bloco.a1 = sequencia[num]
-			bloco.a2 = val
+				val = val.replace(/shi/g,"si")
+				.replace(/chi/g,"ti")
+				.replace(/dzu/g,"du")
+				.replace(/tsu/g,"tu")
+				.replace(/dzu/g,"zu")
+				.replace(/ji/g,"zi")
+				.replace(/fu/g,"hu")
 
-			ordem.push(val)
-			console.log(ordem)
-			
-			this.value = ""
+				bloco.a1 = sequencia[num]
+				bloco.a2 = val
 
-			confirm(bloco.a1,bloco.a2)
-			next(num)
+				ordem.push(val)
+				console.log(ordem.length)
 
-			this.value = this.value.replace(/ /g,"")
+				this.value = ""
 
-			num++
+				confirm(bloco.a1,bloco.a2)
+				next(num)
 
-			
+				this.value = this.value.replace(/ /g,"")
+
+				num++
+
+			}
 		}
 
 	}
@@ -271,6 +275,7 @@
 	}
 
 	function confirm(a,b){
+
 		if(a==b){
 			lista.children[num].classList.add('ok')
 			pontuacao.a++
@@ -281,6 +286,7 @@
 			pontuacao.b++
 			pont.setAttribute("nome","Nome do símbolo "+pontuacao.a+"/"+pontuacao.b+"/"+(pontuacao.a+pontuacao.b))
 		}
+
 	}
 
 	function render2(){

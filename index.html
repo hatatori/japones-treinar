@@ -124,7 +124,7 @@
 		text-align: center;
 	}
 
-	.showhide:hover::before{background-color: #eee;}
+	.showhide:hover::before{cursor: pointer;}
 
 	.showhide::before{
 		content: 'Menu';
@@ -150,11 +150,6 @@
 </style>
 
 <meta charset="utf-8">
-
-<br>
-
-
-
 
 
 <div id="baixo">
@@ -189,6 +184,7 @@
 		lista.innerHTML = ""
 
 		quantidade = parseInt(qt.value)
+
 		sequencia = []
 		num = 0
 
@@ -237,8 +233,6 @@
 
 		if(e.key == " " || e.key == "Enter" ){
 
-			if(ordem.length < quantidade){
-
 				val = this.value.replace(/ /g,"")
 
 				val = val.replace(/shi/g,"si")
@@ -253,7 +247,6 @@
 				bloco.a2 = val
 
 				ordem.push(val)
-				console.log(ordem.length)
 
 				this.value = ""
 
@@ -263,8 +256,6 @@
 				this.value = this.value.replace(/ /g,"")
 
 				num++
-
-			}
 		}
 
 	}
@@ -330,6 +321,9 @@
 	}
 
 	qt.onkeyup=function(){
+		
+
+
 		render1();
 		render2();
 	}

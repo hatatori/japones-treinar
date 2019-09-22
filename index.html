@@ -166,8 +166,16 @@
 	<label><a target="_blank" href='alfabeto.png'>Alfabeto</a></label>
 </div>
 
+
+
 <ul id="lista"></ul>
 <br>
+<!-- Alfabet -->
+<input class="showhide" type="checkbox" name="">
+<div id="tabela">
+	vamos
+</div>
+<!-- fim Alfabet -->
 
 <script src="japones.js"></script>
 
@@ -212,6 +220,11 @@
 			.replace(/zi/g,"ji")
 			.replace(/hu/g,"fu")
 
+			if(k.length==1)
+				k = "-"+k+"-"+toKan(k)+toHir(k)
+			else
+				k = k+"-"+toKan(k)+toHir(k)
+
 			lista.innerHTML += "<li class='borda' data-tit="+k+">"+sequencia[i]+"</li>"
 			list[i] = lista.children[i]
 		}	
@@ -233,29 +246,29 @@
 
 		if(e.key == " " || e.key == "Enter" ){
 
-				val = this.value.replace(/ /g,"")
+			val = this.value.replace(/ /g,"")
 
-				val = val.replace(/shi/g,"si")
-				.replace(/chi/g,"ti")
-				.replace(/dzu/g,"du")
-				.replace(/tsu/g,"tu")
-				.replace(/dzu/g,"zu")
-				.replace(/ji/g,"zi")
-				.replace(/fu/g,"hu")
+			val = val.replace(/shi/g,"si")
+			.replace(/chi/g,"ti")
+			.replace(/dzu/g,"du")
+			.replace(/tsu/g,"tu")
+			.replace(/dzu/g,"zu")
+			.replace(/ji/g,"zi")
+			.replace(/fu/g,"hu")
 
-				bloco.a1 = sequencia[num]
-				bloco.a2 = val
+			bloco.a1 = sequencia[num]
+			bloco.a2 = val
 
-				ordem.push(val)
+			ordem.push(val)
 
-				this.value = ""
+			this.value = ""
 
-				confirm(bloco.a1,bloco.a2)
-				next(num)
+			confirm(bloco.a1,bloco.a2)
+			next(num)
 
-				this.value = this.value.replace(/ /g,"")
+			this.value = this.value.replace(/ /g,"")
 
-				num++
+			num++
 		}
 
 	}
@@ -330,5 +343,7 @@
 
 	render1();
 	render2();
+
+
 
 </script>
